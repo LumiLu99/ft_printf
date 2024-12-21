@@ -12,6 +12,21 @@
 
 #include "ft_printf.h"
 
+size_t	ft_strlen(const char	*s)
+{
+	size_t	i;
+	size_t	count;
+
+	count = 0;
+	i = 0;
+	while (s[i])
+	{
+		i++;
+		count++;
+	}
+	return (count);
+}
+
 char	*ft_strchr(const char *s, int c)
 {
 	int		i;
@@ -28,33 +43,4 @@ char	*ft_strchr(const char *s, int c)
 	if (s[i] == cc)
 		return ((char *) &s[i]);
 	return (NULL);
-}
-
-int	ft_printstr(const char *str)
-{
-	int	i;
-	
-	i = 0;
-	if (!str)
-	{
-		i += write(1, "(null)", 6);
-		return (i);
-	}
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-	return i;
-}
-
-int	ft_printptr(unsigned long long ptr)
-{
-	int	i;
-	char str[] = "0123456789abcdef";
-
-	if (ptr < 9)
-		
-	
-	return i;
 }

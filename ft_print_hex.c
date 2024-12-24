@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yelu <yelu@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: yelu <yelu@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 00:01:43 by yelu              #+#    #+#             */
-/*   Updated: 2024/12/23 00:01:43 by yelu             ###   ########.fr       */
+/*   Updated: 2024/12/24 16:56:39 by yelu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_print_hex(unsigned int num, const char type)
 
 	len = 0;
 	if (num == 0)
-		return (write(1, '0', 1));
+		return (write(1, "0", 1));
 	else
 		hex_print(num, type);
 	return (hex_len(num));

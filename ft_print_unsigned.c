@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_unsigned.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yelu <yelu@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: yelu <yelu@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 00:01:52 by yelu              #+#    #+#             */
-/*   Updated: 2024/12/23 00:01:52 by yelu             ###   ########.fr       */
+/*   Updated: 2024/12/23 14:04:34 by yelu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_print_unsigned(unsigned int n)
 {
 	unsigned int	digit;
-	int len;
+	int				len;
 
 	len = 0;
 	if (n > 9)
@@ -25,8 +25,8 @@ int	ft_print_unsigned(unsigned int n)
 	}
 	else
 	{
-	digit = n + '0';
-	len += write(1, &digit, 1);
+		digit = n + '0';
+		len += write(1, &digit, 1);
 	}
 	return (len);
 }

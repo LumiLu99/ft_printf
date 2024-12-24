@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printstr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yelu <yelu@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: yelu <yelu@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/21 22:30:52 by yelu              #+#    #+#             */
-/*   Updated: 2024/12/21 22:30:52 by yelu             ###   ########.fr       */
+/*   Updated: 2024/12/23 14:56:45 by yelu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_printstr(const char *str)
+int	ft_print_str(const char *str)
 {
 	int	i;
-	
+
 	i = 0;
 	if (!str)
 	{
@@ -27,4 +27,5 @@ void	ft_printstr(const char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
+	return (i);
 }

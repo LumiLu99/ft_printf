@@ -6,37 +6,38 @@
 /*   By: yelu <yelu@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:47:04 by yelu              #+#    #+#             */
-/*   Updated: 2024/12/20 17:06:35 by yelu             ###   ########.fr       */
+/*   Updated: 2024/12/24 21:09:08 by yelu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	check_type(va_list args, const char str)
+int	check_type(va_list args, const char type)
 {
 	int	len;
 
 	len = 0;	
-	if (str == 'c')
+	if (type == 'c')
 		len += ft_print_char(va_arg(args, int));
-	else if (str == 's')
+	else if (type == 's')
 		len += ft_print_str(va_arg(args, char *));
-	else if (str == 'p')
+	else if (type == 'p')
 		len += ft_print_ptr(va_arg(args, unsigned long long));
-	else if (str == 'd' || str == 'i')
+	else if (type == 'd' || type == 'i')
 		len += ft_print_number(va_arg(args, int));
-	else if (str == 'u')
+	else if (type == 'u')
 		len += ft_print_unsigned(va_arg(args, unsigned int));
-	else if (str == 'x')
-		len += ft_print_hex(va_arg(args, unsigned int));
-	else if (str == 'X')
-		len += ft_print_hex(va_arg(args, unsigned int));
+	else if (type == 'x')
+		len += ft_print_hex(va_arg(args, unsigned int), 'x');
+	else if (type == 'X')
+		len += ft_print_hex(va_arg(args, unsigned int), 'X');
 	return (len);
 }
 
-void	ft_print_char(int c)
+int	ft_print_char(int c)
 {
 	write(1, &c, 1);
+	return (1);
 }
 
 int	ft_printf(const char *str, ...)
@@ -69,18 +70,19 @@ int	ft_printf(const char *str, ...)
 
 int main()
 {
-	char s = 'a';
 	int	len1 = 0;
 	int	len2 = 0;
+	char *str = "aaa";
 	
-	len1 = ft_printf("%c %s %p %i", 'a', NULL, &s, 12);
+	len1 = ft_printf("%c %s %d %i %u %x %p", 'a', str, 12, 12, 4545, 677656, str);
+	printf("\n");
 	printf("Total characters: %d", len1);
 	printf("\n");
 	len2 = ft_printf("Hello this is not a Creeper");
 	printf("\n");
 	printf("Total characters: %d", len2);
 	printf("\n");
-	printf("%s %d %llu %s %i", "This is normal printf", 23, &s, &s, 12);
+	printf("%c %s %d %i %u %x %p", 'a', str, 12, 12, 4545, 677656, str);
 }
 
 /**

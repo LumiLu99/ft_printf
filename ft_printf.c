@@ -6,11 +6,12 @@
 /*   By: yelu <yelu@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:47:04 by yelu              #+#    #+#             */
-/*   Updated: 2024/12/24 21:09:08 by yelu             ###   ########.fr       */
+/*   Updated: 2024/12/26 16:46:55 by yelu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int	check_type(va_list args, const char type)
 {
@@ -72,17 +73,15 @@ int main()
 {
 	int	len1 = 0;
 	int	len2 = 0;
-	char *str = "aaa";
+	int lenlen = 0;
+	char *str = "89";
 	
-	len1 = ft_printf("%c %s %d %i %u %x %p", 'a', str, 12, 12, 4545, 677656, str);
+	len1 = ft_printf("%X", 987777);
 	printf("\n");
-	printf("Total characters: %d", len1);
+	printf("ft_printf len: %d\n", len1);
+	lenlen = printf("%X", 987777);
 	printf("\n");
-	len2 = ft_printf("Hello this is not a Creeper");
-	printf("\n");
-	printf("Total characters: %d", len2);
-	printf("\n");
-	printf("%c %s %d %i %u %x %p", 'a', str, 12, 12, 4545, 677656, str);
+	printf("Printf len: %d", lenlen);
 }
 
 /**

@@ -6,7 +6,7 @@
 /*   By: yelu <yelu@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 00:01:43 by yelu              #+#    #+#             */
-/*   Updated: 2024/12/24 16:56:39 by yelu             ###   ########.fr       */
+/*   Updated: 2024/12/26 16:34:38 by yelu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	hex_len(unsigned int num)
 	int	len;
 
 	len = 0;
-	while (len != 0)
+	while (num != 0)
 	{
 		num = num / 16;
 		len++;

@@ -6,7 +6,7 @@
 /*   By: yelu <yelu@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 17:07:01 by yelu              #+#    #+#             */
-/*   Updated: 2024/12/24 21:58:36 by yelu             ###   ########.fr       */
+/*   Updated: 2024/12/26 16:30:06 by yelu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ptr_len(unsigned long long ptr)
 	len = 0;
 	if (ptr == 0)
 		return (1);
-	while (len != 0)
+	while (ptr != 0)
 	{
 		ptr = ptr / 16;
 		len++;
@@ -27,11 +27,8 @@ static int	ptr_len(unsigned long long ptr)
 	return (len);
 }
 
-static int	ft_print_ptr_recursion(unsigned long long ptr)
+static void	ft_print_ptr_recursion(unsigned long long ptr)
 {
-	int	len;
-
-	len = 0;
 	char	*hex = "0123456789abcdef";
 
 	if (ptr > 16)
@@ -44,7 +41,6 @@ static int	ft_print_ptr_recursion(unsigned long long ptr)
 			ft_print_char(ptr + '0');
 		else
 			ft_print_char(hex[ptr]);
-	return (len);
 }
 
 int	ft_print_ptr(unsigned long long ptr)
@@ -55,9 +51,11 @@ int	ft_print_ptr(unsigned long long ptr)
 	if (!ptr)
 	{
 		ft_print_str("(nil)");
-		return (len);
+		return (5);
 	}
 	ft_print_str("0x");
+	len += 2;
+	len += ptr_len(ptr);
 	ft_print_ptr_recursion(ptr);
-	return (ptr_len);
+	return (len);
 }

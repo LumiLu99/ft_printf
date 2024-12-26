@@ -6,7 +6,7 @@
 /*   By: yelu <yelu@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 00:01:31 by yelu              #+#    #+#             */
-/*   Updated: 2024/12/24 17:36:33 by yelu             ###   ########.fr       */
+/*   Updated: 2024/12/26 13:37:34 by yelu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PRINTF
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 
 int		ft_printf(const char *str, ...);

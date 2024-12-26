@@ -19,11 +19,15 @@ int	ft_print_number(int n)
 
 	len = 0;
 	if (n == -2147483648)
+	{
 		write(1, "-2147483648", 11);
+		return (11);
+	}
 	else if (n < 0)
 	{
 		write(1, "-", 1);
 		n = -n;
+		len++;
 		len += ft_print_number(n);
 	}
 	else

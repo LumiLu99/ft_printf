@@ -6,7 +6,7 @@
 /*   By: yelu <yelu@student.42kl.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 14:47:04 by yelu              #+#    #+#             */
-/*   Updated: 2024/12/26 16:46:55 by yelu             ###   ########.fr       */
+/*   Updated: 2024/12/26 22:26:29 by yelu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,15 +74,16 @@ int main()
 	int	len1 = 0;
 	int	len2 = 0;
 	int lenlen = 0;
-	char *str = "89";
+	char *str = "abcdefghijklmnopqrstuvwxyz";
 	
-	len1 = ft_printf("%X", 987777);
+	len1 = ft_printf("%x", 666666);
 	printf("\n");
 	printf("ft_printf len: %d\n", len1);
-	lenlen = printf("%X", 987777);
+	lenlen = printf("%x", 666666);
 	printf("\n");
 	printf("Printf len: %d", lenlen);
 }
+
 
 /**
 Why Do We Need va_arg?
